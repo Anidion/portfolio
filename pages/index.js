@@ -16,17 +16,17 @@ export default function Home() {
           Ben Schmidt
         </h1>
 
-        <h2 className={styles.description}>
+        <h1 className={styles.title}>
           Portfolio
-        </h2>
+        </h1>
 
         <p className={styles.description}>
           Hi! I'm Ben, a 3rd-year Computer Science student at the University of Calgary.
         </p>
 
-        <p>
-          I'm interested in xxx and yyy.
-        </p>
+        <h1 className={styles.title}>
+          Projects
+        </h1>
 
         <div className={styles.grid}>
           <a href="https://github.com/anidion/portfolio" className={styles.card}>
@@ -48,6 +48,15 @@ export default function Home() {
             <h2>Password Manager &rarr;</h2>
             <p>A functional browser-based password manager built for a final project in a security and privacy class.</p>
           </a>
+
+        <h1 className={styles.title}>
+          Experience
+        </h1>
+
+        <div className={styles.description}>
+          <p>Project Manager &lt;&lt; Tech Start UCalgary &lt;&lt; 2022-2023</p>
+          <p>Software Developer &lt;&lt; Tech Start UCalgary &lt;&lt; 2021-2022</p>
+        </div>
 
         </div>
       </main>
