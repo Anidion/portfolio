@@ -25,7 +25,7 @@ export default function Home() {
         </p>
 
         <p>
-          I'm interested in xxx and yyy
+          I'm interested in xxx and yyy.
         </p>
 
         <div className={styles.grid}>
@@ -54,11 +54,11 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <div className={styles.grid}>
-          <a href="https://github.com/anidion">
+          <a href="https://github.com/anidion" className={styles.logo}>
             <Image src="/Github-Mark-32px.png" alt="GitHub Logo" width={32} height={32} />
           </a>
 
-          <a href="https://linkedin.com/in/benschmidt2343">
+          <a href="https://linkedin.com/in/benschmidt2343" className={styles.logo}>
               <Image src="/LI-In-Bug.png" alt="LinkedIn Logo" width={38} height={32} />
           </a>
         </div>
