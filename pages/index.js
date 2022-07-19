@@ -12,9 +12,7 @@ export default function Home() {
 			</Head>
 
 			<main className={styles.main}>
-				<h1 className={styles.title}>Ben Schmidt</h1>
-
-				<h1 className={styles.title}>Portfolio</h1>
+				<h1 className={styles.title}>Ben Schmidt / Portfolio</h1>
 
 				<p className={styles.description}>
 					Hi! I'm Ben, a 3rd-year Computer Science student at the University of
@@ -26,7 +24,7 @@ export default function Home() {
 				<div className={styles.grid}>
 					<div className={styles.card}>
 						<a href="https://github.com/anidion/portfolio">
-							<h2>Portfolio &rarr;</h2>
+							<h2>Portfolio &raquo;</h2>
 						</a>
 						<p>
 							The page you're on! WIP: Automatically populates the project list
@@ -36,7 +34,7 @@ export default function Home() {
 
 					<div className={styles.card}>
 						<a href="https://github.com/tech-start-ucalgary/aquavolution">
-							<h2>Aquavolution &rarr;</h2>
+							<h2>Aquavolution &raquo;</h2>
 						</a>
 						<p>
 							A browser-based 2D game where you play as a fish who must navigate
@@ -46,7 +44,7 @@ export default function Home() {
 
 					<div className={styles.card}>
 						<a href="https://github.com/anidion/raytracer">
-							<h2>Raytracer &rarr;</h2>
+							<h2>Raytracer &raquo;</h2>
 						</a>
 						<p>
 							A C++ raytracer. Built thanks to Peter Shirley's{" "}
@@ -58,24 +56,28 @@ export default function Home() {
 
 					<div className={styles.card}>
 						<a href="https://github.com/anidion/password-manager">
-							<h2>Password Manager &rarr;</h2>
+							<h2>Password Manager &raquo;</h2>
 						</a>
 						<p>
 							A functional browser-based password manager built for a final
 							project in a security and privacy class.
 						</p>
 					</div>
+				</div>
 
-					<h1 className={styles.title}>Experience</h1>
+				<h1 className={styles.title}>Experience</h1>
 
-					<div className={styles.description}>
-						<p>
-							Project Manager &lt;&lt; Tech Start UCalgary &lt;&lt; 2022-2023
-						</p>
-						<p>
-							Software Developer &lt;&lt; Tech Start UCalgary &lt;&lt; 2021-2022
-						</p>
-					</div>
+				<div>
+					<p className={styles.experience}>
+						Project Manager &laquo;{" "}
+						<a href="https://techstartucalgary.com/">Tech Start UCalgary</a>{" "}
+						&laquo; 2022-2023
+					</p>
+					<p className={styles.experience}>
+						Software Developer &laquo;{" "}
+						<a href="https://techstartucalgary.com/">Tech Start UCalgary</a>{" "}
+						&laquo; 2021-2022
+					</p>
 				</div>
 			</main>
 
