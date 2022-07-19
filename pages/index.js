@@ -15,7 +15,7 @@ export default function Home() {
 				<h1 className={styles.title}>Ben Schmidt / Portfolio</h1>
 
 				<p className={styles.description}>
-					Hi! I'm Ben, a 3rd-year Computer Science student at the University of
+					Hi! I&apos;m Ben, a 3rd-year Computer Science student at the University of
 					Calgary.
 				</p>
 
@@ -27,8 +27,8 @@ export default function Home() {
 							<h2>Portfolio &raquo;</h2>
 						</a>
 						<p>
-							The page you're on! WIP: Automatically populates the project list
-							with GitHub repositories I've contributed to.
+							The page you&apos;re on! WIP: Automatically populates the project list
+							with GitHub repositories I&apos;ve contributed to.
 						</p>
 					</div>
 
@@ -47,7 +47,7 @@ export default function Home() {
 							<h2>Raytracer &raquo;</h2>
 						</a>
 						<p>
-							A C++ raytracer. Built thanks to Peter Shirley's{" "}
+							A C++ raytracer. Built thanks to Peter Shirley&apos;s{" "}
 							<a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">
 								Ray Tracing in One Weekend.
 							</a>
