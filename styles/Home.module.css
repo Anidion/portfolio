@@ -81,13 +81,13 @@
 	text-decoration: none;
 	border: 1px solid #eaeaea;
 	border-radius: 10px;
-	transition: color 0.15s ease, border-color 0.15s ease;
-	max-width: 600px;
+	width: 600px;
 }
 
 .card h2:hover,
 .card h2:focus,
 .card h2:active {
+	transition: color 0.15s ease, border-color 0.15s ease;
 	color: rgb(252, 161, 161);
 }
 
