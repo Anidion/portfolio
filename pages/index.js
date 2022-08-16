@@ -1,9 +1,48 @@
+import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Tooltip from "@mui/material/Tooltip";
+import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
+import ScreenRotationAltIcon from "@mui/icons-material/ScreenRotationAlt";
+
+class Card extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			flipped: false,
+		};
+	}
+
+	render() {
+		return (
+			<div className={styles.card}>
+				<Grid container>
+					<Grid item xs={11}>
+						<a href={this.props.link}>
+							<h2>{this.props.title} &raquo;</h2>
+						</a>
+					</Grid>
+					<Grid item xs={1}>
+						<IconButton
+							onClick={() =>
+								this.setState({ flipped: this.state.flipped ? false : true })
+							}
+						>
+							<ScreenRotationAltIcon color="primary" />
+						</IconButton>
+					</Grid>
+				</Grid>
+
+				<p>
+					{this.state.flipped ? this.props.flipdesc : this.props.description}
+				</p>
+			</div>
+		);
+	}
+}
 
 export default function Home() {
 	return (
@@ -25,47 +64,32 @@ export default function Home() {
 				<h1 className={styles.title}>Projects</h1>
 
 				<div className={styles.grid}>
-					<div className={styles.card}>
-						<a href="https://github.com/anidion/portfolio">
-							<h2>Portfolio &raquo;</h2>
-						</a>
-						<p>
-							The page you&apos;re on! WIP: Automatically populates the project
-							list with GitHub repositories I&apos;ve contributed to.
-						</p>
-					</div>
+					<Card
+						title="Portfolio"
+						link="https://github.com/anidion/portfolio"
+						description="The page you're on!"
+						flipdesc="Flipside"
+					/>
 
-					<div className={styles.card}>
-						<a href="https://github.com/tech-start-ucalgary/aquavolution">
-							<h2>Aquavolution &raquo;</h2>
-						</a>
-						<p>
-							A browser-based 2D game where you play as a fish who must navigate
-							the ocean, avoiding danger and evolving as you eat more and more.
-						</p>
-					</div>
+					<Card
+						title="Aquavolution"
+						link="https://github.com/tech-start-ucalgary/aquavolution"
+						description="A browser-based 2D game where you play as a fish who must navigate
+						the ocean, avoiding danger and evolving as you eat more and more."
+					/>
 
-					<div className={styles.card}>
-						<a href="https://github.com/anidion/raytracer">
-							<h2>Raytracer &raquo;</h2>
-						</a>
-						<p>
-							A C++ raytracer. Built thanks to Peter Shirley&apos;s{" "}
-							<a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">
-								Ray Tracing in One Weekend.
-							</a>
-						</p>
-					</div>
+					<Card
+						title="Raytracer"
+						link="https://github.com/anidion/raytracer"
+						description="A C++ raytracer. Built thanks to Peter Shirley's Ray Tracing in One Weekend."
+					/>
 
-					<div className={styles.card}>
-						<a href="https://github.com/anidion/password-manager">
-							<h2>Password Manager &raquo;</h2>
-						</a>
-						<p>
-							A functional browser-based password manager built for a final
-							project in a security and privacy class.
-						</p>
-					</div>
+					<Card
+						title="Password Manager"
+						link="https://github.com/anidion/password-manager"
+						description="A functional browser-based password manager built for a final
+						project in a security and privacy class."
+					/>
 				</div>
 
 				<h1 className={styles.title}>Experience</h1>
