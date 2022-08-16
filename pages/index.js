@@ -1,6 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Tooltip from "@mui/material/Tooltip";
+import IconButton from "@mui/material/IconButton";
+import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
 
 export default function Home() {
 	return (
@@ -15,8 +18,8 @@ export default function Home() {
 				<h1 className={styles.title}>Ben Schmidt / Portfolio</h1>
 
 				<p className={styles.description}>
-					Hi! I&apos;m Ben, a 3rd-year Computer Science student at the University of
-					Calgary.
+					Hi! I&apos;m Ben, a 3rd-year Computer Science student at the
+					University of Calgary.
 				</p>
 
 				<h1 className={styles.title}>Projects</h1>
@@ -27,8 +30,8 @@ export default function Home() {
 							<h2>Portfolio &raquo;</h2>
 						</a>
 						<p>
-							The page you&apos;re on! WIP: Automatically populates the project list
-							with GitHub repositories I&apos;ve contributed to.
+							The page you&apos;re on! WIP: Automatically populates the project
+							list with GitHub repositories I&apos;ve contributed to.
 						</p>
 					</div>
 
@@ -83,26 +86,40 @@ export default function Home() {
 
 			<footer className={styles.footer}>
 				<div className={styles.grid}>
-					<a href="https://github.com/anidion" className={styles.logo}>
-						<Image
-							src="/Github-Mark-32px.png"
-							alt="GitHub Logo"
-							width={32}
-							height={32}
-						/>
-					</a>
+					<Tooltip title="GitHub" arrow>
+						<a href="https://github.com/anidion" className={styles.logo}>
+							<Image
+								src="/Github-Mark-32px.png"
+								alt="GitHub Logo"
+								width={32}
+								height={32}
+							/>
+						</a>
+					</Tooltip>
 
-					<a
-						href="https://linkedin.com/in/benschmidt2343"
-						className={styles.logo}
-					>
-						<Image
-							src="/LI-In-Bug.png"
-							alt="LinkedIn Logo"
-							width={38}
-							height={32}
-						/>
-					</a>
+					<Tooltip title="Resume" arrow>
+						<IconButton
+							target="_blank"
+							href="https://drive.google.com/file/d/1d0FfUxD_vgxqGDBiI2zrGJsgVOL74tPy/view?usp=sharing"
+							className={styles.logo}
+						>
+							<ArticleRoundedIcon fontSize="large" color="success" />
+						</IconButton>
+					</Tooltip>
+
+					<Tooltip title="LinkedIn" arrow>
+						<a
+							href="https://linkedin.com/in/benschmidt2343"
+							className={styles.logo}
+						>
+							<Image
+								src="/LI-In-Bug.png"
+								alt="LinkedIn Logo"
+								width={38}
+								height={32}
+							/>
+						</a>
+					</Tooltip>
 				</div>
 			</footer>
 		</div>
