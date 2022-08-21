@@ -1,25 +1,43 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-import Slider from '@mui/material/Slider';
-import VolumeDown from '@mui/icons-material/VolumeDown';
-import VolumeUp from '@mui/icons-material/VolumeUp';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Slider from "@mui/material/Slider";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
+const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 export default function ThemeSlider() {
-  const [value, setValue] = React.useState<number>(30);
+	const prefersDarkMode: boolean = useMediaQuery(
+		"(prefers-color-scheme: dark)"
+	);
 
-  const handleChange = (event: Event, newValue: number | number[]) => {
-    setValue(newValue as number);
-  };
+	const colorMode = React.useContext(ColorModeContext);
 
-  return (
-    <Box sx={{ width: 200 }}>
-      <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
-        <VolumeDown />
-        <Slider aria-label="Volume" value={value} onChange={handleChange} />
-        <VolumeUp />
-      </Stack>
-      <Slider disabled defaultValue={30} aria-label="Disabled slider" />
-    </Box>
-  );
+	const [value, setValue] = React.useState<number>(prefersDarkMode ? 0 : 100);
+
+	const handleChange = (event: Event, newValue: number | number[]) => {
+		setValue(newValue as number);
+		if (newValue < 50) {
+			colorMode.toggleColorMode;
+		} else {
+			colorMode.toggleColorMode;
+		}
+	};
+
+	return (
+		<Box sx={{ width: 200, margin: "0 0 2rem" }}>
+			<Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
+				<DarkModeIcon htmlColor="rgb(108, 56, 146)" />
+				<Slider
+					color="secondary"
+					aria-label="Brightness"
+					value={value}
+					onChange={handleChange}
+				/>
+				<LightModeIcon htmlColor="rgb(252, 161, 161)" />
+			</Stack>
+		</Box>
+	);
 }

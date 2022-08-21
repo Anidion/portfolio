@@ -10,7 +10,7 @@ import ThemeSlider from "../components/themeslider";
 
 export default function Home() {
 	return (
-		<div className={styles.container}>
+		<div>
 			<Head>
 				<title>Ben Schmidt - Portfolio</title>
 				<meta
@@ -21,6 +21,8 @@ export default function Home() {
 			</Head>
 
 			<main className={styles.main}>
+				<ThemeSlider />
+
 				<h1 className={styles.title}>Ben Schmidt / Portfolio</h1>
 
 				<p className={styles.description}>
@@ -61,7 +63,7 @@ export default function Home() {
 
 				<h1 className={styles.title}>Experience</h1>
 
-				<div>
+				<div className={styles.expGrid}>
 					<p className={styles.experience}>
 						Project Manager &laquo;{" "}
 						<a
