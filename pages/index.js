@@ -31,7 +31,7 @@ class Card extends React.Component {
 								this.setState({ flipped: this.state.flipped ? false : true })
 							}
 						>
-							<ScreenRotationAltIcon color="primary" />
+							{this.props.flipdesc!=null ? <ScreenRotationAltIcon color="primary" /> : <></>}
 						</IconButton>
 					</Grid>
 				</Grid>
