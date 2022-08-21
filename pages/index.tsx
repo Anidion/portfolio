@@ -31,7 +31,7 @@ export default function Home() {
 				<h1 className={styles.title}>Projects</h1>
 
 				<div className={styles.grid}>
-					<Card						
+					<Card
 						title="Portfolio"
 						link="https://github.com/anidion/portfolio"
 						description="The page you're on!"
