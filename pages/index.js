@@ -21,7 +21,7 @@ class Card extends React.Component {
 			<div className={styles.card}>
 				<Grid container>
 					<Grid item xs={11}>
-						<a href={this.props.link}>
+						<a target="_blank" rel="noreferrer" href={this.props.link}>
 							<h2>{this.props.title} &raquo;</h2>
 						</a>
 					</Grid>
@@ -49,7 +49,10 @@ export default function Home() {
 		<div className={styles.container}>
 			<Head>
 				<title>Ben Schmidt - Portfolio</title>
-				<meta name="description" content="Ben Schmidt's Portfolio of Projects" />
+				<meta
+					name="description"
+					content="Ben Schmidt's Portfolio of Projects"
+				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
@@ -97,23 +100,40 @@ export default function Home() {
 				<div>
 					<p className={styles.experience}>
 						Project Manager &laquo;{" "}
-						<a href="https://techstartucalgary.com/">Tech Start UCalgary</a>{" "}
+						<a
+							target="_blank"
+							rel="noreferrer"
+							href="https://techstartucalgary.com/"
+						>
+							Tech Start UCalgary
+						</a>{" "}
 						&laquo; 2022-2023
 					</p>
 					<p className={styles.experience}>
 						Software Developer &laquo;{" "}
-						<a href="https://techstartucalgary.com/">Tech Start UCalgary</a>{" "}
+						<a
+							target="_blank"
+							rel="noreferrer"
+							href="https://techstartucalgary.com/"
+						>
+							Tech Start UCalgary
+						</a>{" "}
 						&laquo; 2021-2022
 					</p>
 				</div>
 			</main>
 
 			<footer className={styles.footer}>
-				<div className={styles.grid}>
+				<div className={styles.footergrid}>
 					<Tooltip title="GitHub" arrow>
-						<a href="https://github.com/anidion" className={styles.logo}>
+						<a
+							target="_blank"
+							rel="noreferrer"
+							href="https://github.com/anidion"
+							className={styles.logo}
+						>
 							<Image
-								src="/Github-Mark-32px.png"
+								src="/GitHub-Mark-Light-120px-plus.png"
 								alt="GitHub Logo"
 								width={32}
 								height={32}
@@ -124,6 +144,7 @@ export default function Home() {
 					<Tooltip title="Resume" arrow>
 						<IconButton
 							target="_blank"
+							rel="noreferrer"
 							href="https://drive.google.com/file/d/1d0FfUxD_vgxqGDBiI2zrGJsgVOL74tPy/view?usp=sharing"
 							className={styles.logo}
 						>
@@ -133,6 +154,8 @@ export default function Home() {
 
 					<Tooltip title="LinkedIn" arrow>
 						<a
+							target="_blank"
+							rel="noreferrer"
 							href="https://linkedin.com/in/benschmidt2343"
 							className={styles.logo}
 						>
