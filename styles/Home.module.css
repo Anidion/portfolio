@@ -28,6 +28,10 @@
 	flex-grow: 1;
 }
 
+.themeslider {
+	height: 100%;
+}
+
 .title {
 	text-align: center;
 	margin: 0 0 2rem;
