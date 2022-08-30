@@ -6,7 +6,6 @@ import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
 import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
 import Card from "../components/card";
-import ThemeSlider from "../components/themeslider";
 
 export default function Home() {
 	return (
@@ -21,8 +20,6 @@ export default function Home() {
 			</Head>
 
 			<main className={styles.main}>
-				<ThemeSlider />
-
 				<h1 className={styles.title}>Ben Schmidt / Portfolio</h1>
 
 				<p className={styles.description}>
