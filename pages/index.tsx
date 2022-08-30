@@ -5,9 +5,12 @@ import styles from "../styles/Home.module.css";
 import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
 import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
+import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
 import Card from "../components/card";
 
 export default function Home() {
+	const theme = useTheme();
+
 	return (
 		<div>
 			<Head>
@@ -96,7 +99,11 @@ export default function Home() {
 							className={styles.logo}
 						>
 							<Image
-								src="/GitHub-Mark-Light-120px-plus.png"
+								src={
+									theme.palette.mode == "dark"
+										? "/GitHub-Mark-Light-120px-plus.png"
+										: "/GitHub-Mark-120px-plus.png"
+								}
 								alt="GitHub Logo"
 								width={32}
 								height={32}
