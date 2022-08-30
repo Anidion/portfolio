@@ -5,12 +5,14 @@ import styles from "../styles/Home.module.css";
 import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
 import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
+import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
 import Card from "../components/card";
-import ThemeSlider from "../components/themeslider";
 
 export default function Home() {
+	const theme = useTheme();
+
 	return (
-		<div className={styles.container}>
+		<div>
 			<Head>
 				<title>Ben Schmidt - Portfolio</title>
 				<meta
@@ -31,7 +33,7 @@ export default function Home() {
 				<h1 className={styles.title}>Projects</h1>
 
 				<div className={styles.grid}>
-					<Card						
+					<Card
 						title="Portfolio"
 						link="https://github.com/anidion/portfolio"
 						description="The page you're on!"
@@ -61,7 +63,7 @@ export default function Home() {
 
 				<h1 className={styles.title}>Experience</h1>
 
-				<div>
+				<div className={styles.expGrid}>
 					<p className={styles.experience}>
 						Project Manager &laquo;{" "}
 						<a
@@ -97,7 +99,11 @@ export default function Home() {
 							className={styles.logo}
 						>
 							<Image
-								src="/GitHub-Mark-Light-120px-plus.png"
+								src={
+									theme.palette.mode == "dark"
+										? "/GitHub-Mark-Light-120px-plus.png"
+										: "/GitHub-Mark-120px-plus.png"
+								}
 								alt="GitHub Logo"
 								width={32}
 								height={32}
