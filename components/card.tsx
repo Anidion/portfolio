@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import ScreenRotationAltIcon from "@mui/icons-material/ScreenRotationAlt";
+import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
 
 interface CardState {
 	flipped?: boolean;
@@ -13,6 +14,7 @@ interface CardProps {
 	link: string;
 	description: string;
 	flipdesc?: string;
+	isDark: boolean;
 }
 
 export default class Card extends React.Component<CardProps, CardState> {
@@ -20,7 +22,7 @@ export default class Card extends React.Component<CardProps, CardState> {
 
 	render() {
 		return (
-			<div className={styles.card}>
+			<div className={this.props.isDark ? styles.card : styles.cardlight}>
 				<Grid container>
 					<Grid item xs={11}>
 						<a target="_blank" rel="noreferrer" href={this.props.link}>

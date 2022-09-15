@@ -38,6 +38,7 @@ export default function Home() {
 						link="https://github.com/anidion/portfolio"
 						description="The page you're on!"
 						flipdesc="Flipside"
+						isDark={theme.palette.mode == "dark" ? true : false}
 					/>
 
 					<Card
@@ -45,12 +46,14 @@ export default function Home() {
 						link="https://github.com/tech-start-ucalgary/aquavolution"
 						description="A browser-based 2D game where you play as a fish who must navigate
 						the ocean, avoiding danger and evolving as you eat more and more."
+						isDark={theme.palette.mode == "dark" ? true : false}
 					/>
 
 					<Card
 						title="Raytracer"
 						link="https://github.com/anidion/raytracer"
 						description="A C++ raytracer. Built thanks to Peter Shirley's Ray Tracing in One Weekend."
+						isDark={theme.palette.mode == "dark" ? true : false}
 					/>
 
 					<Card
@@ -58,6 +61,7 @@ export default function Home() {
 						link="https://github.com/anidion/password-manager"
 						description="A functional browser-based password manager built for a final
 						project in a security and privacy class."
+						isDark={theme.palette.mode == "dark" ? true : false}
 					/>
 				</div>
 

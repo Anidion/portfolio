@@ -5,17 +5,19 @@ import CssBaseline from "@mui/material/CssBaseline";
 import "../styles/globals.css";
 import styles from "../styles/Home.module.css";
 import ThemeSlider from "../components/themeslider";
+import { Color } from "@mui/material";
 
 function MyApp({ Component, pageProps }) {
-	const [prefersDarkMode, setMode] = React.useState<boolean>(
-		useMediaQuery("(prefers-color-scheme: dark)")
-	);
+	const [prefersDarkMode, setMode] = React.useState<boolean>(true);
 
 	const theme = React.useMemo(
 		() =>
 			createTheme({
 				palette: {
 					mode: prefersDarkMode ? "dark" : "light",
+					primary: {
+						main: "rgb(252, 161, 161)",
+					},
 				},
 			}),
 		[prefersDarkMode]
@@ -30,15 +32,23 @@ function MyApp({ Component, pageProps }) {
 		newBrightness < 50 ? setMode(true) : setMode(false);
 	};
 
-	const themeSliderProps = {
+	interface themeSliderPropTypes {
+		handleSlider: (event: Event, newValue: number) => void;
+		defaultValue: number;
+		color: "primary" | "secondary";
+	}
+
+	let themeSliderProps:themeSliderPropTypes = {
 		handleSlider: handleSlider,
+		defaultValue: 0,
+		color: brightness < 50 ? "secondary" : "primary",
 	};
 
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
 			<main className={styles.main}>
-				<ThemeSlider {...themeSliderProps} />
+				<ThemeSlider {...themeSliderProps}/>
 				<Component {...pageProps} />
 			</main>
 		</ThemeProvider>
